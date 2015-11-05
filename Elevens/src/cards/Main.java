@@ -12,9 +12,10 @@ public class Main {
 		unitTest.unitTest("King", "Nathan", -1);
 		unitTest.unitTest("Hettel", "Engineering", 0);
 		unitTest.unitTest("Miller", "Nothing", 3);
+		Win();
 	}
 	
-	public void Win(){
+	public static void Win(){
 		try {
 			Desktop.getDesktop().browse(new URI("https://www.youtube.com/embed/4gd-PY_ammY?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1"));
 		} catch (Exception e) {
