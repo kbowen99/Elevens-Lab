@@ -7,11 +7,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CardTester unitTest = new CardTester();
+		//CardTester unitTest = new CardTester();
 		//unitTest.unitTest("127", "Magic", 9001);
 		//unitTest.unitTest("King", "Nathan", -1);
 		//unitTest.unitTest("Hettel", "Engineering", 0);
 		//unitTest.unitTest("Miller", "Nothing", 3);
+		
+		
+		DeckTester deckTest = new DeckTester();
+		deckTest.test();
 		Win();
 	}
 	
