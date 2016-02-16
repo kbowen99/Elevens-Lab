@@ -7,20 +7,23 @@ public class DeckTester {
 				"Miller",
 				"Cornwall",
 				"Nathan",
-				"Matt"
+				"Matt",
+				"7"
 		};
 		String[] suit = {
 			"Engineering",
 			"Nothing",
 			"Engineering",
 			"Not Working",
-			"Anger"
+			"Anger",
+			"Johnson"
 		};
 		int[] pointV = {
 				10,
 				0,
 				11,
 				-1,
+				24,
 				7
 		};
 		Deck d = new Deck(rank, suit, pointV);
