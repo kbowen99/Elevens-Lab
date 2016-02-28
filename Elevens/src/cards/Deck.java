@@ -1,7 +1,6 @@
 package cards;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Deck {
 	/**
@@ -42,9 +41,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		if (size == 0)
-			return true;
-		return false;
+		return (size == 0);
 	}
 
 	/**
@@ -76,11 +73,10 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		if (!isEmpty()){
-			size--;
-			return cards.get(size);
-		}
-		return null;
+		if (isEmpty())
+			return null;
+		size--;
+		return cards.get(size);
 	}
 
 	/**

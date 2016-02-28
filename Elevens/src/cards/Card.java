@@ -28,7 +28,6 @@ public class Card {
 	}
 	
 	public boolean equals(Card otherCard) {
-		
 		if(this.rank.equals(otherCard.rank()))
 			if(this.suit.equals(otherCard.suit()))
 				if(this.pointValue == otherCard.pointValue())
