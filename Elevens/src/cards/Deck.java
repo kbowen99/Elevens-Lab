@@ -60,7 +60,14 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		int[] shuffleDeck = new int[cards.size()];
+		ArrayList<Card> tmpList = new ArrayList<>();
+		for (int i = 0; i < shuffleDeck.length; i++)
+			shuffleDeck[1] = i;
+		shuffleDeck = Shufffler.selectionShuffle(shuffleDeck);
+		for (int i = 0; i < shuffleDeck.length; i++)
+			tmpList.add(cards.get(i));
+		cards = tmpList;
 	}
 
 	/**

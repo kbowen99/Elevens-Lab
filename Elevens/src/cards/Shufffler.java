@@ -1,16 +1,18 @@
 package cards;
 
+import java.io.IOException;
+
 public class Shufffler {
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 8;
 
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 52;
 
 	/**
 	 * Tests shuffling methods.
@@ -19,12 +21,16 @@ public class Shufffler {
 	public static void main(){
 		System.out.println("Results of " + SHUFFLE_COUNT +
 				 " consecutive perfect shuffles:");
+		
+		//Create Array of magical length
 		int[] values1 = new int[VALUE_COUNT];
+		//fill with count
 		for (int i = 0; i < values1.length; i++) {
 			values1[i] = i;
 		}
+		//Shuffle and print out results, repeat # of time
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			values1 = perfectShuffle(values1);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values1[k]);
@@ -56,8 +62,19 @@ public class Shufffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
-		//TODO: Activity 3
+	public static int[] perfectShuffle(int[] values) {
+        int[] shuffled = new int[values.length];
+        int k = 0;
+        for(int j = 0; j < values.length/2; j++) {
+            shuffled[k] = values[j];
+            k += 2;
+        }
+        k = 1;
+        for(int j = values.length/2; j < values.length; j++) {
+            shuffled[k] = values[j];
+            k += 2;
+        }
+        return shuffled;
 	}
 	
 	/**
@@ -71,7 +88,46 @@ public class Shufffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
-		//TODO: Activity 3
+	public static int[] selectionShuffle(int[] values) {
+	       for(int k = values.length - 1; k > 0; k--) {
+	           int r = (int)(Math.random() * k);
+	           int temp = values[r];
+	           values[r] = values[k];
+	           values[k] = temp;
+	        }
+	       return values;
+	}
+	
+	
+	/**
+	 * Weighted coin flip
+	 * I have no idea why I'm making this
+	 */
+	public static String cheatyFlip(){
+		if (((int)(Math.random() * 100)) > 30)
+			return "heads";
+		return "tails";
+	}
+	
+	/**
+	 * checks for Permutations in 2 int arrays
+	 * @throws IOException Magic is Hard
+	 */
+	public static boolean checkPerm(int[] arr1, int[] arr2) throws IOException{
+		//Check
+		if (arr1.length != arr2.length)
+			throw new IOException();
+		//cycle through all ints in int[] 1
+		for(int i : arr1){
+			boolean test = false;
+			for (int j : arr2){
+				if (i == j)
+					test = true;
+			}
+			if (!test)
+				return false;
+		}
+		
+		return true;
 	}
 }

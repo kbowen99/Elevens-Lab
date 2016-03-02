@@ -1,6 +1,7 @@
 package cards;
 
 import java.awt.Desktop;
+import java.io.IOException;
 import java.net.URI;
 
 public class Main {
@@ -15,7 +16,17 @@ public class Main {
 		
 		//DeckTester deckTest = new DeckTester();
 		//deckTest.test();
-		Win();
+		
+		Shufffler.main();
+		
+		pL("Cheaty flip testing:");
+		pL(Shufffler.cheatyFlip());
+		pL(Shufffler.cheatyFlip());
+		pL(Shufffler.cheatyFlip());
+		
+		DeckTester2.main(null);
+		
+		//Win();
 	}
 	
 	public static void Win(){
@@ -25,6 +36,10 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private static void pL(Object o){
+		System.out.println(o);
 	}
 
 }
