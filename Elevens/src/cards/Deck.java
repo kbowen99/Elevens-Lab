@@ -24,13 +24,10 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards =  new ArrayList<>();
-		if ((ranks.length + suits.length)/2 == values.length){
-			for(int i = 0; i < ranks.length; i++){
-				Card GreenCard = new Card(ranks[i],suits[i],values[i]);
-				cards.add(GreenCard);
+		for (int j = 0; j < ranks.length; j++) {
+			for (String suitString : suits) {
+				cards.add(new Card(ranks[j], suitString, values[j]));
 			}
-		} else {
-			System.out.println("Ranks/Suits/Values size mismatch; Deck Generation Failed");
 		}
 		size = cards.size();
 		shuffle();
