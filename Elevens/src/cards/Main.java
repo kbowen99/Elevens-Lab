@@ -7,16 +7,6 @@ import java.net.URI;
 public class Main {
 
 	public static void main(String[] args) {
-		//CardTester unitTest = new CardTester();
-		//unitTest.unitTest("127", "Magic", 9001);
-		//unitTest.unitTest("King", "Nathan", -1);
-		//unitTest.unitTest("Hettel", "Engineering", 0);
-		//unitTest.unitTest("Miller", "Nothing", 3);
-		
-		
-		//DeckTester deckTest = new DeckTester();
-		//deckTest.test();
-		
 		Shufffler.main();
 		
 		pL("Cheaty flip testing:");

@@ -37,7 +37,7 @@ public abstract class Board {
 		cards = new Card[size];
 		deck = new Deck(ranks, suits, pointValues);
 		if (I_AM_DEBUGGING) {
-			System.out.println(deck);
+			System.out.println(deck.toString());
 			System.out.println("----------");
 		}
 		dealMyCards();
