@@ -24,8 +24,9 @@ import java.util.ArrayList;
  */
 public class CardGameGUI extends JFrame implements ActionListener {
 
+	private static String cardLoc = "/";
 	/**
-	 * 
+	 * stuff
 	 */
 	private static final long serialVersionUID = 1L;
 	/** Height of the game frame. */
@@ -268,9 +269,9 @@ public class CardGameGUI extends JFrame implements ActionListener {
 	 * @return String representation of the image
 	 */
 	private String imageFileName(Card c, boolean isSelected) {
-		String str = "cards/";
+		String str = cardLoc;
 		if (c == null) {
-			return "cards/back1.GIF";
+			return cardLoc + "back1.GIF";
 		}
 		str += c.rank() + c.suit();
 		if (isSelected) {
